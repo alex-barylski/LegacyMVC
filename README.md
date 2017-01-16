@@ -4,7 +4,7 @@ https://sourceforge.net/projects/texocms/
 
 ## History/Reasoning
 
-Sometime around 2004/2005 I started to actively engage community members at http://devnetwork.net - the majority of discussions 
+Sometime around 2004/2005 I started to engage community members at http://devnetwork.net - the majority of discussions 
 which I contributed were mostly architecture and design related. There was a community movement to build a web-centric MVC 
 framework based on the knowledge and experience of some of the key community members.
 
@@ -21,18 +21,18 @@ semi-functioning ORM, sophisticated views management layer (à la: Drupal render
 As tools like Packagist became defacto and other publicly available frameworks like Symfony and Zend gained momentum, my interest in 
 this framework started to wane and eventually I stopped developing it completely (circa: 2010). It was never open-sourced and only ever used 
 for my own projects, and the company I work for. I am sharing this framework not for the code but maybe a shared experience? That being said, I have no interest 
-in pursuing future developments of this framework, as I strongly believe Symfony is the toolkit all PHP developers should be using.
+in pursuing future developments of this framework. I strongly believe Symfony is the toolkit all PHP developers should be using - it has become my silver bullet.
 
 ## Objectives
 
 Light-weight controller-centric framework along with various utility libraries. Follow S.O.L.I.D principles and implement all patterns accordingly; No reason to 
 call a component "Builder" when it is actually a "Factory". Strong focus on loose coupling and high cohesion, and heavy use of inversion of control
 to allow programmer flexibility. This was to be enforced by what I called a Consumer Provider Best Practice - not to be confused with 
-Producer Consumer Pattern. You see this pattern all the time with components like databases, caching, session management, etc. 
+Producer Consumer Pattern. You see this practice all the time with components like databases, caching, session management, etc. 
 
 Basically when working with a consumer and provider instance, the two functions are distinctly separated and abstracted accordingly. The provider 
 would implement a bulk of the "work" and the consumer (ie: container) only provided an interface to the client developer. While technically this is 
-dependency injection, I referred to it by a new name to re-enforce the idea that consumers were essentially dynamic delegates or proxies to the underlying
+dependency injection, I referred to it by a new name to re-enforce the idea that consumers were essentially delegates or proxies to the underlying
 provider class.
 
 A controller architecture can range from a trivial single method implementation to full scale, enterprise ready, controller orchestration. I believe 
