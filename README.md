@@ -45,9 +45,9 @@ requests, CLI invocation, etc.
 
 ## Components
 
-1. Front Controller
- 1.1. Controller Router
- 1.2. Controller Dispatcher (Hardcoded)
-2. Action Controller
-3. Filter Controller (Pre and Post)
+- Front Controller
+  - Controller Router
+  - Controller Dispatcher (Hardcoded)
+- Action Controller
+- Filter Controller (Pre and Post)
 
