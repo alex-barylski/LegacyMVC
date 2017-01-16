@@ -8,10 +8,8 @@ Sometime around 2004/2005 I started to engage community members at http://devnet
 which I contributed were mostly architecture and design related. There was a community movement to build a web-centric MVC 
 framework based on the knowledge and experience of some of the key community members.
 
-For whatever reason, I did not participate in that exercise directly, but I remained a keen observer and began to implement my own.
-
-During thousands of discussions with members of http://devnetwork.net I learned a great deal about what makes "good" software, at least in 
-the minds of the many. Topics such as *Open-Closed Principle* (the "O" in S.O.L.I.D), design patterns Strategy, Facade, Factory, etc were discussed frequently 
+During those discussions I learned a great deal about what makes "good" software, at least in the minds of the many. Topics such as 
+*Open-Closed Principle* (the "O" in S.O.L.I.D), design patterns Strategy, Facade, Factory, etc were discussed frequently 
 and passionately by all. This motivated me to "learn by example" and implement a light-weight (minimal or no dependencies) micro-mvc framework. 
 What started as a God-like page controller leaned out over time into what it consists of today, plus or minus a few components.
 
