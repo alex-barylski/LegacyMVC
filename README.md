@@ -30,15 +30,25 @@ call a component "Builder" when it is actually a "Factory". Strong focus on loos
 to allow programmer flexibility. This was to be enforced by what I called a Consumer Provider Best Practice - not to be confused with 
 Producer Consumer Pattern. You see this pattern all the time with components like databases, caching, session management, etc. 
 
-Basically when working with a consumer and provider instance, the two functions are distinctly separated and abstracted away accordingly. The provider 
-would implement a bulk of the "work" and the container (ie: consumer) only provided an interface to the client developer. While technically, this is 
+Basically when working with a consumer and provider instance, the two functions are distinctly separated and abstracted accordingly. The provider 
+would implement a bulk of the "work" and the consumer (ie: container) only provided an interface to the client developer. While technically this is 
 dependency injection, I referred to it by a new name to re-enforce the idea that consumers were essentially dynamic delegates or proxies to the underlying
 provider class.
 
+A controller architecture can range from a trivial single method implementation to full scale, enterprise ready, controller orchestration. I believe 
+LegacyMVC is somewhere in between as I tried to achieve some flexibility, balanced with ease of use.
+
+I needed intercepting filters as a way of globally sniffing and snuffing web requests and responses. I also knew I needed to perform
+both HTTP redirect and controller action forwarding, with the latter being forced through a filtering cycle as well. Lastly, I needed the 
+ability to swap out the "router" component to accommodate any URI schema imaginable. 
+
+As a inverse requirement, I was certain I would not want the dispatcher calling anything but object methods, so closures, global functions and 
+static methods were of no interest to me. It saved me from having to extract the dispatcher into it's own component. In hindsight, I would 
+refactor the dispatcher into it's own component, as I believe it would have resulted in a cleaner implementation when it came to handling RESTful 
+requests, CLI invocation, etc.
+
 ## Components
 
-Implementing the controller coordination for MVC, as it turns out, is quite a simple task. Conceptually a controller only need be invoked and basically 
-hand off control to a model and/or view and return the result back to the user agent.
 
 1. Front Controller
  1.1. Controller Router
