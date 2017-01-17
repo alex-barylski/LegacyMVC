@@ -17,11 +17,11 @@ is the toolkit all PHP developers should be using - it has become my silver bull
 
 ## Objectives
 
-Be a light-weight, controller-centric framework, whilst offering various utility libraries. 
-Follow S.O.L.I.D principles and implement all patterns accordingly; No reason to 
-call a component "Builder" when it is actually a "Factory". Strong focus on loose 
-coupling and high cohesion, and extensive use of inversion of control to allow programmer 
-flexibility. 
+Be a light-weight, controller-centric framework, while offering various utility libraries. 
+Follow [S.O.L.I.D](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)) 
+principles and implement all patterns accordingly; No reason to call a component 
+"Builder" when it is actually a "Factory". Strong focus on loose coupling and high 
+cohesion, and extensive use of inversion of control to allow programmer flexibility. 
 
 This was to be implied by what I called a Consumer Provider Best 
 Practice - not to be confused with Producer Consumer Pattern. As developers we see 
