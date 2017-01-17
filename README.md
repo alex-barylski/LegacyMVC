@@ -62,11 +62,11 @@ collisions, and it provided me a quick way of finding the file in question.
 
 ```
 index.php (Application Entry) 
-  -> Instantiate Request/Response objects 
-  -> Instantiate Router adapter (consumer)
-		-> Instantiate and inject Router provider (MySQL, etc)
-  -> Get instance of front controller (singleton)
-  -> Register PRE and POST plug-in filters
-  -> Call application_main
-    -> Dispatch action(s) and return response
+ -> Instantiate Request/Response objects 
+ -> Instantiate Router adapter (consumer)
+  -> Instantiate and inject Router provider (MySQL, etc)
+ -> Get instance of front controller (singleton)
+ -> Register PRE and POST plug-in filters
+ -> Call application_main
+  -> Dispatch action(s) and return response
 ```
