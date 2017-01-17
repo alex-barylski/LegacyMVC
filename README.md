@@ -61,7 +61,8 @@ collisions, and it provided me a quick way of finding the file in question.
 #### High-Level Component Flow
 
 ```
-index.php (Application Entry) 
+index.php 
+(Application Entry) 
  -> Instantiate Request/Response objects 
  -> Instantiate Router adapter (consumer)
   -> Instantiate and inject Router provider (MySQL, etc)
@@ -70,3 +71,8 @@ index.php (Application Entry)
  -> Call application_main
   -> Dispatch action(s) and return response
 ```
+
+
+## TODO
+
+Implement a quick example usage
