@@ -1,23 +1,19 @@
 ## History/Reasoning
 
 Sometime around 2004/2005 I started to engage community members at http://devnetwork.net - the majority of discussions 
-which I contributed were mostly software design related. There was a community movement to build a web-centric MVC 
-framework based on the knowledge and experience of some of the community members. While I didn't participate in the project itself, I 
-remained a keen observer.
+which I participated were mostly software design related. For a time, there was a community movement to build a web-centric MVC 
+framework based on the knowledge and experience of some of the community members. I remained a keen observer but nothing more.
 
 During those discussions I learned a great deal about what makes "good" software, at least in the minds of the many. Topics such as 
-*Open-Closed Principle* (the "O" in S.O.L.I.D), design patterns Strategy, Facade, Factory, etc were discussed frequently 
-and passionately by all. This motivated me to "learn by example" and implement a light-weight (minimal or no dependencies) MVC framework. 
-What started as a God-like page controller leaned out over time into what it consists of today, plus or minus a few components.
+*Open-Closed Principle* (the "O" in S.O.L.I.D) and design patterns like Strategy, Facade and Factory were discussed frequently. 
+This motivated me to "learn by example" and implement a light-weight (minimal or no dependencies) MVC framework. 
 
-LegacyMVC is perhaps a misnomer, but is what remains of a decade long journey. At one point, this project was much greater in size, as I had 
-implemented a semi-functioning ORM, sophisticated views management layer (à la: Drupal render arrays) as well as a forms and validation component.
+What started as a God-like page controller leaned out over time into what it 
+consists of today, plus or minus a few components.
 
-As tools like Packagist became defacto and other publicly available frameworks like Symfony and Zend gained momentum, my interest in 
-this framework started to wane and eventually I stopped developing it completely (circa: 2010). It was never open-sourced and only ever used 
-for my own projects, and the company I work for. I am sharing this framework not for the code but maybe a shared experience? That being said, 
-I have no interest in pursuing future developments of this framework. I strongly believe Symfony is the toolkit all PHP developers 
-should be using - it has become my silver bullet.
+I am sharing this framework not for the code, or at least it's functional use, but 
+maybe a shared experience or posterity? That being said, I strongly believe Symfony 
+is the toolkit all PHP developers should be using - it has become my silver bullet.
 
 ## Objectives
 
@@ -30,6 +26,8 @@ Basically when working with a consumer and provider instance, the two functions 
 would implement a bulk of the "work" and the consumer (ie: container) only provided an interface to the client developer. While technically this is 
 dependency injection, I referred to it by a new name to re-enforce the idea that consumers were essentially delegates or proxies to the underlying
 provider class.
+
+## Architecture
 
 A controller architecture can range from a trivial single method implementation to full scale, enterprise ready, controller orchestration. I believe 
 LegacyMVC is somewhere in between as I tried to achieve some flexibility, balanced with ease of use.
