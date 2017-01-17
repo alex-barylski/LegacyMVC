@@ -23,7 +23,7 @@ principles and implement all patterns accordingly; No reason to call a component
 "Builder" when it is actually a "Factory". Strong focus on loose coupling and high 
 cohesion, and extensive use of inversion of control to allow programmer flexibility. 
 
-This was to be implied by what I called a Consumer Provider Best 
+This was to be implied by what I referred as a Consumer Provider Best 
 Practice - not to be confused with [Producer Consumer Pattern](https://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem). 
 As developers we see this practice all the time with components like databases, caching, session management, etc. 
 
@@ -34,12 +34,12 @@ client developer. The container would basically act as dynamic a delegate or pro
 
 ## Architecture
 
-A controller architecture can vary from trivial single method implementations, to 
-robust enterprise ready, controller component orchestration. I believe LegacyMVC is 
+A controller architecture can vary, from a single method implementation to 
+full-scale multi-controller/component orchestration. I believe LegacyMVC is 
 somewhere in between as I tried to achieve some flexibility, balanced with ease of use.
 
 For instance, I needed intercepting filters as a way of globally sniffing and snuffing 
-web requests and responses. I also knew I needed to both HTTP redirect and controller action 
+web requests and responses. I also knew I needed both HTTP redirect and controller action 
 forwarding, with the latter being forced through a filtering cycle. 
 
 Lastly, I needed the ability to swap out the "router" component to accommodate any 
@@ -48,16 +48,25 @@ URI schema imaginable.
 ### Missing Abstractions
 
 I opted not to have the dispatcher calling anything but object methods. So closures, 
-global functions and static methods were of no interest to me. It saved me from having 
-to extract the dispatcher into it's own component. This was probably a mistake.
- 
-C'est la vie :)
+global functions and static methods were of no interest to me. 
+
+In retrospect this was probably a mistake - C'est la vie :)
 
 ## Components
 
-- Front Controller
-  - Controller Router
-  - Controller Dispatcher (Hardcoded)
-- Action Controller
-- Filter Controller (Pre and Post)
+The component file structure is reminiscent of the class name and organization of
+the various components (ZF). This was to simplify autoloading, prevent class name
+collisions, and it provided me a quick way of finding the file in question. 
 
+#### High-Level Component Flow
+
+`
+index.php (Application Entry) 
+  -> Instantiate Request/Response objects 
+  -> Instantiate Router adapter (consumer)
+		-> Instantiate and inject Router provider (MySQL, etc)
+  -> Get instance of front controller (singleton)
+  -> Register PRE and POST plug-in filters
+  -> Call application_main
+    -> Dispatch action(s) and return response
+`
