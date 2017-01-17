@@ -60,7 +60,7 @@ collisions, and it provided me a quick way of finding the file in question.
 
 #### High-Level Component Flow
 
-`
+```
 index.php (Application Entry) 
   -> Instantiate Request/Response objects 
   -> Instantiate Router adapter (consumer)
@@ -69,4 +69,4 @@ index.php (Application Entry)
   -> Register PRE and POST plug-in filters
   -> Call application_main
     -> Dispatch action(s) and return response
-`
+```
